@@ -1,12 +1,14 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
+# the code is update to the new version
 
-@app.route("/")
+
+@app.route('/')
 def hello_world():
-  return " I am on work"
+  return render_template('home.html')
 
 
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=8080)
+  app.run(host='0.0.0.0', debug=True, port=8080)
